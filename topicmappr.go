@@ -1,9 +1,9 @@
 package main
 
 import (
-  "math"
-  "sort"
-  "bytes"
+	"bytes"
+	"math"
+	"sort"
 )
 
 // whatChanged takes a before and after broker replica set and returns a string

@@ -54,10 +54,13 @@ func main() {
 	changes(pm1, pm2)
 
 	// Write the output.
-	_, err = json.Marshal(pm2)
+	out, err := json.Marshal(pm2)
 	exitOnErr(err)
 
-	// fmt.Println(string(out))
+	out = append(out, 10)
+
+	exitOnErr(ioutil.WriteFile("move-leaders.json", out, 0644))
+	fmt.Printf("\nwrote move-leaders.json\n")
 }
 
 func changes(pm1, pm2 *kafkazk.PartitionMap) {
